@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,19 +12,28 @@ import {
 } from "lucide-react";
 
 const Header = () => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const input = e.currentTarget.input.value;
+    console.log(input);
+  };
   return (
     <header className="flex flex-col md:flex-row items-center bg-walmart px-10 py-7 space-x-5">
       <Link href="/" className="mb-5 md:mb-0">
         <Image
-          src="https://links.papareact.com/yur"
+          src="https://i.imgur.com/5V4wehM.png"
           alt="Logo"
           width={150}
           height={150}
         />
       </Link>
-      <form className="flex items-center bg-white rounded-full w-full flex-1">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center bg-white rounded-full w-full flex-1"
+      >
         <input
           type="text"
+          name="input"
           placeholder="Search Everything..."
           className="flex-1 px-5  rounded-l-full outline-none placeholder:text-sm"
         />
