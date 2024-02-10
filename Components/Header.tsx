@@ -2,6 +2,7 @@
 import React, { FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import wmart from "../public/wmart.png";
 import {
   Grid2X2,
   Heart,
@@ -20,12 +21,7 @@ const Header = () => {
   return (
     <header className="flex flex-col md:flex-row items-center bg-walmart px-10 py-7 space-x-5">
       <Link href="/" className="mb-5 md:mb-0">
-        <Image
-          src="https://i.imgur.com/5V4wehM.png"
-          alt="Logo"
-          width={150}
-          height={150}
-        />
+        <Image src={wmart} alt="Logo" width={150} height={150} />
       </Link>
       <form
         onSubmit={handleSubmit}
