@@ -11,12 +11,16 @@ import {
   ShoppingCart,
   User,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const input = e.currentTarget.input.value;
     console.log(input);
+    router.push(`/search?q=${input}`);
   };
   return (
     <header className="flex flex-col md:flex-row items-center bg-walmart px-10 py-7 space-x-5">
@@ -31,7 +35,7 @@ const Header = () => {
           type="text"
           name="input"
           placeholder="Search Everything..."
-          className="flex-1 px-5  rounded-l-full outline-none placeholder:text-sm"
+          className="flex-1 px-5  rounded-l-full outline-none placeholder:text-sm text-black"
         />
         <button type="submit">
           <Search className="rounded-full h-10 px-3 w-10 bg-yellow-400 cursor-pointer" />
@@ -73,7 +77,7 @@ const Header = () => {
           </div>
         </Link>
         <Link
-          href={"/"}
+          href={"/basket"}
           className="flex text-white font-bold items-center space-x-2 text-sm"
         >
           <ShoppingCart size={20} />
