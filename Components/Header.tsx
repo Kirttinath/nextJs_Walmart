@@ -90,7 +90,7 @@ const Header = () => {
             <p className="text-xs font-light">
               {cart.length > 0 ? `${cart.length}` : "No Items"}
             </p>
-            <p>{total}</p>
+            <p>{cart.length > 0 ? `${total}` : "$0.00"}</p>
           </div>
         </Link>
       </div>
