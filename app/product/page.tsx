@@ -8,6 +8,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/Components/ui/carousel";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/Components/ui/table";
 import { Badge } from "@/Components/ui/badge";
 
 type Props = {
@@ -87,6 +95,23 @@ const productPage = async ({ searchParams: { url } }: Props) => {
         </p>
         {/* Add to Cart Button */}
         <hr />
+        <h3 className="font-bold text-xl pt-10">Specifications</h3>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="">Specification</TableHead>
+              <TableHead>Value</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {product.specifications.map((spec) => (
+              <TableRow key={spec.key}>
+                <TableCell className="font-bold">{spec.key}</TableCell>
+                <TableCell>{spec.value}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
     </div>
   );
