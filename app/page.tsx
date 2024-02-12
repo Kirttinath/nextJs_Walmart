@@ -12,7 +12,7 @@ import toys from "../public/toys.jpeg";
 import wardrobe from "../public/wardrobe.webp";
 export default function Home() {
   return (
-    <main className="">
+    <main className="flex-1">
       <div className="grid grid-cols-1 grid-flow-row-dense md:grid-cols-4 gap-6 m-6">
         <GridOption
           title="Sweet gifts for less"
