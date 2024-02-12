@@ -14,7 +14,7 @@ export interface ProductContent {
 }
 export interface Product {
   url: string;
-  neta: Meta;
+  meta: Meta;
   price: number;
   title: string;
   images: string[];
